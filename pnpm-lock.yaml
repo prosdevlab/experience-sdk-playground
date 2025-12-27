@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@prosdevlab/experience-sdk':
+        specifier: ^0.1.5
+        version: 0.1.5(typescript@5.9.3)
+      '@prosdevlab/experience-sdk-plugins':
         specifier: ^0.1.4
         version: 0.1.4(typescript@5.9.3)
-      '@prosdevlab/experience-sdk-plugins':
-        specifier: ^0.1.3
-        version: 0.1.3(typescript@5.9.3)
       '@uiw/react-json-view':
         specifier: 2.0.0-alpha.39
         version: 2.0.0-alpha.39(@babel/runtime@7.28.4)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -347,11 +347,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@prosdevlab/experience-sdk-plugins@0.1.3':
-    resolution: {integrity: sha512-hAWS+YlIYpYh9p+T5CIYc7633vjv0OdACiz26Caa7dZ32NuVBK5B/4bJLHXoN2RERYt8b0SWFr3WkV6Gr8RD7g==}
+  '@prosdevlab/experience-sdk-plugins@0.1.4':
+    resolution: {integrity: sha512-rV/LONl9QR7LASq3ywHqr254hH0TINGNddnKq1vVYVd3WrPOFHj5eDS/q78eWsTYV2GbiSjUGba9xh4ylW66EQ==}
 
-  '@prosdevlab/experience-sdk@0.1.4':
-    resolution: {integrity: sha512-gjBVbx5GmDAxw6a4wfpBOa0THScJWaIu+cqk+gukdE1Vzfnty0BCmrrr9y0HP0bo3OPbmnNwRbkYHeyZwzdxvw==}
+  '@prosdevlab/experience-sdk@0.1.5':
+    resolution: {integrity: sha512-1+FWxBNbI1Arz7yYq6GEuiYfPsA98djUG4lUW8lX1VagyeEe2DOS3FMolEi6/EDUVNHCLpJfSCtVb+jRZTjVbw==}
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
@@ -893,18 +893,18 @@ snapshots:
   '@next/swc-win32-x64-msvc@16.1.1':
     optional: true
 
-  '@prosdevlab/experience-sdk-plugins@0.1.3(typescript@5.9.3)':
+  '@prosdevlab/experience-sdk-plugins@0.1.4(typescript@5.9.3)':
     dependencies:
       '@lytics/sdk-kit': 0.1.1(typescript@5.9.3)
       '@lytics/sdk-kit-plugins': 0.1.2(@lytics/sdk-kit@0.1.1(typescript@5.9.3))
     transitivePeerDependencies:
       - typescript
 
-  '@prosdevlab/experience-sdk@0.1.4(typescript@5.9.3)':
+  '@prosdevlab/experience-sdk@0.1.5(typescript@5.9.3)':
     dependencies:
       '@lytics/sdk-kit': 0.1.1(typescript@5.9.3)
       '@lytics/sdk-kit-plugins': 0.1.2(@lytics/sdk-kit@0.1.1(typescript@5.9.3))
-      '@prosdevlab/experience-sdk-plugins': 0.1.3(typescript@5.9.3)
+      '@prosdevlab/experience-sdk-plugins': 0.1.4(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
