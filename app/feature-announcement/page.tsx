@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import { EventTrackingDemo } from '../components/EventTrackingDemo';
-import { featureAnnouncementBanner } from '../configs/promotions';
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { EventTrackingDemo } from "../components/EventTrackingDemo";
+import { featureAnnouncementBanner } from "../configs/promotions";
 
 export default function FeatureAnnouncementPage() {
   return (
@@ -28,7 +28,8 @@ export default function FeatureAnnouncementPage() {
             Event Tracking Demo
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
-            This page demonstrates how the Experience SDK captures structured events for analytics integration.
+            This page demonstrates how the Experience SDK captures structured
+            events for analytics integration.
           </p>
         </div>
 
@@ -37,17 +38,17 @@ export default function FeatureAnnouncementPage() {
           description="Track button clicks and dismissals with rich event metadata for analytics"
           config={featureAnnouncementBanner}
           bestFor={[
-            'Feature announcements',
-            'Product launches',
-            'Analytics integration (GTM, Segment, Lytics)',
-            'Event tracking and attribution',
+            "Feature announcements",
+            "Product launches",
+            "Analytics integration (GTM, Segment, Lytics)",
+            "Event tracking and attribution",
           ]}
           tips={[
-            'Add metadata to buttons for enriched event tracking',
-            'Listen to experiences:action events to send to your tag',
-            'Track dismiss events to measure engagement',
-            'Use action names for semantic event naming',
-            'Primary CTA = highest value action',
+            "Add metadata to buttons for enriched event tracking",
+            "Listen to experiences:action events to send to your tag",
+            "Track dismiss events to measure engagement",
+            "Use action names for semantic event naming",
+            "Primary CTA = highest value action",
           ]}
         />
 
@@ -57,13 +58,21 @@ export default function FeatureAnnouncementPage() {
             Integration with Analytics Tools
           </h2>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-            💡 <strong>Note:</strong> All buttons use <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-xs">action</code> instead of <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-xs">url</code> to prevent navigation and keep you on this demo page.
+            💡 <strong>Note:</strong> All buttons use{" "}
+            <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-xs">
+              action
+            </code>{" "}
+            instead of{" "}
+            <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-xs">
+              url
+            </code>{" "}
+            to prevent navigation and keep you on this demo page.
           </p>
           <div className="space-y-4 text-sm text-zinc-700 dark:text-zinc-300">
             <div>
               <h3 className="font-semibold mb-2">Google Tag Manager:</h3>
               <pre className="bg-white dark:bg-zinc-900 p-3 rounded border border-blue-200 dark:border-blue-700 overflow-x-auto text-xs">
-{`import { on } from '@prosdevlab/experience-sdk';
+                {`import { on } from '@prosdevlab/experience-sdk';
 
 on('experiences:action', (event) => {
   window.dataLayer = window.dataLayer || [];
@@ -84,7 +93,7 @@ on('experiences:action', (event) => {
             <div>
               <h3 className="font-semibold mb-2">Segment (Analytics.js):</h3>
               <pre className="bg-white dark:bg-zinc-900 p-3 rounded border border-blue-200 dark:border-blue-700 overflow-x-auto text-xs">
-{`import { on } from '@prosdevlab/experience-sdk';
+                {`import { on } from '@prosdevlab/experience-sdk';
 
 on('experiences:action', (event) => {
   analytics.track('Experience Interaction', {
@@ -103,7 +112,7 @@ on('experiences:action', (event) => {
             <div>
               <h3 className="font-semibold mb-2">Lytics (jstag):</h3>
               <pre className="bg-white dark:bg-zinc-900 p-3 rounded border border-blue-200 dark:border-blue-700 overflow-x-auto text-xs">
-{`import { on } from '@prosdevlab/experience-sdk';
+                {`import { on } from '@prosdevlab/experience-sdk';
 
 on('experiences:action', (event) => {
   jstag.send({
@@ -144,7 +153,12 @@ on('experiences:dismissed', (event) => {
 });`}
               </pre>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-2">
-                💡 Uses <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded">xp-*</code> naming convention to distinguish Experience SDK events from other tools.
+                💡 Uses{" "}
+                <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded">
+                  xp-*
+                </code>{" "}
+                naming convention to distinguish Experience SDK events from
+                other tools.
               </p>
             </div>
           </div>
@@ -153,4 +167,3 @@ on('experiences:dismissed', (event) => {
     </div>
   );
 }
-

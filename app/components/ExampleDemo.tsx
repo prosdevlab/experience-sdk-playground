@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Copy, Target, Lightbulb, FileJson, ExternalLink } from 'lucide-react';
-import { register } from '@prosdevlab/experience-sdk';
-import type { Experience } from '@prosdevlab/experience-sdk';
-import { ConfigDisplay } from './ConfigDisplay';
+import type { Experience } from "@prosdevlab/experience-sdk";
+import { register } from "@prosdevlab/experience-sdk";
+import { Copy, ExternalLink, FileJson, Lightbulb, Target } from "lucide-react";
+import { useState } from "react";
+import { ConfigDisplay } from "./ConfigDisplay";
 
 interface ExampleDemoProps {
   title: string;
@@ -25,8 +25,8 @@ export function ExampleDemo({
 
   const handleTrigger = () => {
     // Special handling for feature announcement (event tracking demo)
-    if (config.id === 'feature-launch') {
-      window.location.href = '/feature-announcement';
+    if (config.id === "feature-launch") {
+      window.location.href = "/feature-announcement";
       return;
     }
 
@@ -34,8 +34,8 @@ export function ExampleDemo({
     register(config.id, config);
 
     // Get the URL from targeting rules
-    let targetUrl = '/';
-    
+    let targetUrl = "/";
+
     if (config.targeting?.url?.contains) {
       // Navigate to a URL that contains the target string
       targetUrl = config.targeting.url.contains;
@@ -44,8 +44,8 @@ export function ExampleDemo({
     } else if (config.targeting?.url?.matches) {
       // For regex matches, use a sample matching URL
       const regex = config.targeting.url.matches;
-      if (regex.source.includes('electronics')) {
-        targetUrl = '/categories/electronics';
+      if (regex.source.includes("electronics")) {
+        targetUrl = "/categories/electronics";
       }
     }
 
@@ -80,7 +80,7 @@ export function ExampleDemo({
               onClick={() => setIsExpanded(!isExpanded)}
               className="px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
             >
-              {isExpanded ? 'Hide Config' : 'Show Config'}
+              {isExpanded ? "Hide Config" : "Show Config"}
             </button>
           </div>
         </div>
@@ -102,7 +102,7 @@ export function ExampleDemo({
                 type="button"
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    JSON.stringify(config, null, 2)
+                    JSON.stringify(config, null, 2),
                   );
                 }}
                 className="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors inline-flex items-center gap-1"
@@ -162,4 +162,3 @@ export function ExampleDemo({
     </div>
   );
 }
-

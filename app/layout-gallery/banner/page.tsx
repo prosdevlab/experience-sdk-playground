@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowLeft, Copy, Lightbulb } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowLeft, Copy, Lightbulb } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function BannerLayoutGallery() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -15,28 +15,31 @@ export default function BannerLayoutGallery() {
 
   const examples = [
     {
-      title: 'Compact Dark Banner (Nextra-style)',
-      description: 'Single-line, centered, dark theme announcement',
+      title: "Compact Dark Banner (Nextra-style)",
+      description: "Single-line, centered, dark theme announcement",
       preview: (
-        <div 
+        <div
           className="relative rounded-lg"
-          style={{ 
-            background: '#111827', 
-            color: '#f9fafb',
-            borderBottom: 'none'
+          style={{
+            background: "#111827",
+            color: "#f9fafb",
+            borderBottom: "none",
           }}
         >
           <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-center gap-4">
             <span className="text-sm font-medium">
               New features just dropped! Check out our latest updates.
             </span>
-            <button 
+            <button
               type="button"
               className="text-sm font-medium text-blue-400 hover:underline"
             >
               See What's New
             </button>
-            <button type="button" className="ml-4 text-zinc-400 hover:text-zinc-50 transition-colors">
+            <button
+              type="button"
+              className="ml-4 text-zinc-400 hover:text-zinc-50 transition-colors"
+            >
               ✕
             </button>
           </div>
@@ -65,26 +68,40 @@ export default function BannerLayoutGallery() {
   targeting: { url: { contains: '/' } },
   priority: 1,
 }`,
-      bestFor: ['Simple announcements', 'Changelog updates', 'Minimalist designs', 'Dark mode themes'],
-      tips: ['Use `justifyContent: "center"` for centered text', 'Keep messages very concise', 'Link buttons are good for subtle CTAs'],
+      bestFor: [
+        "Simple announcements",
+        "Changelog updates",
+        "Minimalist designs",
+        "Dark mode themes",
+      ],
+      tips: [
+        'Use `justifyContent: "center"` for centered text',
+        "Keep messages very concise",
+        "Link buttons are good for subtle CTAs",
+      ],
     },
     {
-      title: 'Compact Promo Banner',
-      description: 'Compact, single-line promo with custom brand color',
+      title: "Compact Promo Banner",
+      description: "Compact, single-line promo with custom brand color",
       preview: (
-        <div 
+        <div
           className="relative rounded-lg"
-          style={{ 
-            background: '#a6e3e3', 
-            color: '#1c1d1f',
-            borderBottom: 'none'
+          style={{
+            background: "#a6e3e3",
+            color: "#1c1d1f",
+            borderBottom: "none",
           }}
         >
           <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
             <span className="text-sm font-medium">
-              <strong>Ends in 5h 59m 32s.</strong> One last deal | You've shopped for others. Now, get something for you. Courses from $9.99.
+              <strong>Ends in 5h 59m 32s.</strong> One last deal | You've
+              shopped for others. Now, get something for you. Courses from
+              $9.99.
             </span>
-            <button type="button" className="flex-shrink-0 text-zinc-700 hover:text-zinc-900 transition-colors">
+            <button
+              type="button"
+              className="flex-shrink-0 text-zinc-700 hover:text-zinc-900 transition-colors"
+            >
               ✕
             </button>
           </div>
@@ -110,42 +127,59 @@ export default function BannerLayoutGallery() {
   targeting: { url: { contains: '/shop' } },
   priority: 5,
 }`,
-      bestFor: ['Time-sensitive promotions', 'Single-line offers', 'Minimalist calls to action', 'Brand-specific color schemes'],
-      tips: ['Use `<strong>` for emphasis within the message', 'Combine multiple short phrases with `|` for density', 'Consider `position: "bottom"` for less intrusive promotions'],
+      bestFor: [
+        "Time-sensitive promotions",
+        "Single-line offers",
+        "Minimalist calls to action",
+        "Brand-specific color schemes",
+      ],
+      tips: [
+        "Use `<strong>` for emphasis within the message",
+        "Combine multiple short phrases with `|` for density",
+        'Consider `position: "bottom"` for less intrusive promotions',
+      ],
     },
     {
-      title: 'Multi-Button Feature Announcement',
-      description: 'Default layout with primary and secondary CTAs',
+      title: "Multi-Button Feature Announcement",
+      description: "Default layout with primary and secondary CTAs",
       preview: (
-        <div 
+        <div
           className="relative rounded-lg border border-zinc-200 dark:border-zinc-800"
-          style={{ 
-            background: '#ffffff', 
-            color: '#111827'
+          style={{
+            background: "#ffffff",
+            color: "#111827",
           }}
         >
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
             <div className="flex-1">
               <p className="text-sm text-zinc-900 dark:text-zinc-50">
-                <strong>New Feature:</strong> Real-time Analytics Dashboard is now live. Track your metrics instantly.
+                <strong>New Feature:</strong> Real-time Analytics Dashboard is
+                now live. Track your metrics instantly.
               </p>
             </div>
             <div className="flex items-center gap-2 flex-shrink-0">
-              <button 
+              <button
                 type="button"
                 className="px-4 py-2 text-sm font-medium rounded-md transition-colors"
-                style={{ background: '#2563eb', color: '#ffffff' }}
+                style={{ background: "#2563eb", color: "#ffffff" }}
               >
                 Learn More
               </button>
-              <button 
+              <button
                 type="button"
                 className="px-4 py-2 text-sm font-medium rounded-md transition-colors"
-                style={{ background: '#f3f4f6', color: '#374151', border: '1px solid #e5e7eb' }}
+                style={{
+                  background: "#f3f4f6",
+                  color: "#374151",
+                  border: "1px solid #e5e7eb",
+                }}
               >
                 Watch Demo
               </button>
-              <button type="button" className="p-2 text-zinc-400 hover:text-zinc-900 transition-colors">
+              <button
+                type="button"
+                className="p-2 text-zinc-400 hover:text-zinc-900 transition-colors"
+              >
                 ✕
               </button>
             </div>
@@ -166,40 +200,69 @@ export default function BannerLayoutGallery() {
   },
   targeting: { url: { contains: '/' } },
 }`,
-      bestFor: ['Feature announcements', 'Product launches', 'Major updates', 'Event invitations'],
-      tips: ['Primary CTA = main action', 'Secondary CTA = alternative action', 'Keep both CTAs relevant to the message', 'Test different CTA combinations'],
+      bestFor: [
+        "Feature announcements",
+        "Product launches",
+        "Major updates",
+        "Event invitations",
+      ],
+      tips: [
+        "Primary CTA = main action",
+        "Secondary CTA = alternative action",
+        "Keep both CTAs relevant to the message",
+        "Test different CTA combinations",
+      ],
     },
     {
-      title: 'Cookie Consent Style',
-      description: 'Multi-line compliance banner with inline links and multiple action buttons',
+      title: "Cookie Consent Style",
+      description:
+        "Multi-line compliance banner with inline links and multiple action buttons",
       preview: (
-        <div 
+        <div
           className="relative rounded-lg border border-zinc-200 dark:border-zinc-700"
-          style={{ 
-            background: '#f5f5f5', 
-            color: '#333333'
+          style={{
+            background: "#f5f5f5",
+            color: "#333333",
           }}
         >
           <div className="max-w-6xl mx-auto px-6 py-5">
             <p className="text-sm text-zinc-700 leading-relaxed mb-4">
-              This website uses cookies and similar technologies to collect information you provide and information about your interactions with our sites to improve your experience, analyze performance and traffic on our website and assist our marketing efforts and customer service. We may share this information with our third-party partners. You can change your <a href="#" className="text-blue-600 hover:underline">cookie preferences here</a>. By continuing to browse, you agree to our use of these tools in accordance with our <a href="#" className="text-blue-600 hover:underline">Privacy Notice</a> and you agree to the terms of our <a href="#" className="text-blue-600 hover:underline">Terms of Service</a>.
+              This website uses cookies and similar technologies to collect
+              information you provide and information about your interactions
+              with our sites to improve your experience, analyze performance and
+              traffic on our website and assist our marketing efforts and
+              customer service. We may share this information with our
+              third-party partners. You can change your{" "}
+              <a href="#" className="text-blue-600 hover:underline">
+                cookie preferences here
+              </a>
+              . By continuing to browse, you agree to our use of these tools in
+              accordance with our{" "}
+              <a href="#" className="text-blue-600 hover:underline">
+                Privacy Notice
+              </a>{" "}
+              and you agree to the terms of our{" "}
+              <a href="#" className="text-blue-600 hover:underline">
+                Terms of Service
+              </a>
+              .
             </p>
             <div className="flex items-center justify-end gap-2">
-              <button 
+              <button
                 type="button"
                 className="px-4 py-2 text-sm font-medium rounded-md"
-                style={{ background: '#0f172a', color: '#ffffff' }}
+                style={{ background: "#0f172a", color: "#ffffff" }}
               >
                 OK, got it
               </button>
-              <button 
+              <button
                 type="button"
                 className="px-4 py-2 text-sm font-medium rounded-md"
-                style={{ background: '#0f172a', color: '#ffffff' }}
+                style={{ background: "#0f172a", color: "#ffffff" }}
               >
                 Adjust preferences
               </button>
-              <button 
+              <button
                 type="button"
                 className="px-4 py-2 text-sm font-medium text-zinc-700 hover:underline"
               >
@@ -236,8 +299,18 @@ export default function BannerLayoutGallery() {
 // .cookie-consent-banner .xp-banner__buttons {
 //   justify-content: flex-end;
 // }`,
-      bestFor: ['GDPR/CCPA compliance', 'Privacy policy updates', 'Data collection consent', 'Cookie opt-in/opt-out'],
-      tips: ['Provide inline links to privacy policy and terms', 'Use light neutral background for readability', 'Set dismissable: false to require user interaction', 'Align buttons to the right for professional look'],
+      bestFor: [
+        "GDPR/CCPA compliance",
+        "Privacy policy updates",
+        "Data collection consent",
+        "Cookie opt-in/opt-out",
+      ],
+      tips: [
+        "Provide inline links to privacy policy and terms",
+        "Use light neutral background for readability",
+        "Set dismissable: false to require user interaction",
+        "Align buttons to the right for professional look",
+      ],
     },
   ];
 
@@ -264,14 +337,18 @@ export default function BannerLayoutGallery() {
             Banner Layout Gallery
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl">
-            Visual reference for styling and customizing banner experiences. Copy configurations and adapt them to your brand.
+            Visual reference for styling and customizing banner experiences.
+            Copy configurations and adapt them to your brand.
           </p>
         </div>
 
         {/* Examples */}
         <div className="space-y-12">
           {examples.map((example, index) => (
-            <div key={index} className="border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden bg-white dark:bg-zinc-950">
+            <div
+              key={index}
+              className="border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden bg-white dark:bg-zinc-950"
+            >
               {/* Header */}
               <div className="p-6 border-b border-zinc-200 dark:border-zinc-800">
                 <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">
@@ -299,11 +376,13 @@ export default function BannerLayoutGallery() {
                     className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
                   >
                     <Copy className="w-3 h-3" />
-                    {copiedIndex === index ? 'Copied!' : 'Copy Code'}
+                    {copiedIndex === index ? "Copied!" : "Copy Code"}
                   </button>
                 </div>
                 <pre className="text-xs bg-zinc-50 dark:bg-zinc-800 p-4 rounded border border-zinc-200 dark:border-zinc-700 overflow-x-auto">
-                  <code className="font-mono leading-relaxed">{example.code}</code>
+                  <code className="font-mono leading-relaxed">
+                    {example.code}
+                  </code>
                 </pre>
               </div>
 
@@ -351,40 +430,76 @@ export default function BannerLayoutGallery() {
             Available CSS Classes
           </h2>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-            Use these classes with the <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-xs">className</code> prop:
+            Use these classes with the{" "}
+            <code className="px-1 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-xs">
+              className
+            </code>{" "}
+            prop:
           </p>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Main banner container</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Main banner container
+              </p>
             </div>
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner--top</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Top-positioned banner</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner--top
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Top-positioned banner
+              </p>
             </div>
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner--bottom</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Bottom-positioned banner</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner--bottom
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Bottom-positioned banner
+              </p>
             </div>
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner__button</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Button element</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner__button
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Button element
+              </p>
             </div>
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner__button--primary</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Primary button variant</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner__button--primary
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Primary button variant
+              </p>
             </div>
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner__button--secondary</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Secondary button variant</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner__button--secondary
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Secondary button variant
+              </p>
             </div>
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner__button--link</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Link button variant</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner__button--link
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Link button variant
+              </p>
             </div>
             <div>
-              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">.xp-banner__close</code>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Close/dismiss button</p>
+              <code className="text-xs font-mono text-blue-700 dark:text-blue-300">
+                .xp-banner__close
+              </code>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Close/dismiss button
+              </p>
             </div>
           </div>
         </div>
@@ -404,4 +519,3 @@ export default function BannerLayoutGallery() {
     </div>
   );
 }
-

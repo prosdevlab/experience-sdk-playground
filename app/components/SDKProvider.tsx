@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { init, bannerPlugin } from '@prosdevlab/experience-sdk';
+import { bannerPlugin, init } from "@prosdevlab/experience-sdk";
+import { useEffect } from "react";
 
 export function SDKProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -12,9 +12,8 @@ export function SDKProvider({ children }: { children: React.ReactNode }) {
       plugins: [bannerPlugin],
     });
 
-    console.log('✅ Experience SDK initialized');
+    console.log("✅ Experience SDK initialized");
   }, []);
 
   return <>{children}</>;
 }
-

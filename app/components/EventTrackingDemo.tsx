@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Copy, Target, Lightbulb, FileJson, Activity, X } from 'lucide-react';
-import { init, register, on, evaluate } from '@prosdevlab/experience-sdk';
-import { bannerPlugin } from '@prosdevlab/experience-sdk-plugins';
-import type { Experience } from '@prosdevlab/experience-sdk';
-import { ConfigDisplay } from './ConfigDisplay';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import type { Experience } from "@prosdevlab/experience-sdk";
+import { evaluate, init, on, register } from "@prosdevlab/experience-sdk";
+import { bannerPlugin } from "@prosdevlab/experience-sdk-plugins";
+import { Activity, Copy, FileJson, Lightbulb, Target, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { ConfigDisplay } from "./ConfigDisplay";
 
 interface EventTrackingDemoProps {
   title: string;
@@ -45,16 +45,16 @@ export function EventTrackingDemo({
     register(config.id, config);
 
     // Listen for impression (show) events BEFORE evaluating
-    const unsubscribeShown = on('experiences:shown', (event: any) => {
-      console.log('👁️ Show event captured:', event);
-      
+    const unsubscribeShown = on("experiences:shown", (event: any) => {
+      console.log("👁️ Show event captured:", event);
+
       const capturedEvent: CapturedEvent = {
-        type: 'experiences:shown',
+        type: "experiences:shown",
         timestamp: Date.now(),
         data: {
           experienceId: event.experienceId || config.id,
           experienceType: config.type || event.type,
-          event: 'impression',
+          event: "impression",
           context: {
             url: window.location.href,
             timestamp: event.timestamp || Date.now(),
@@ -67,11 +67,11 @@ export function EventTrackingDemo({
     });
 
     // Listen for button click events
-    const unsubscribe = on('experiences:action', (event: any) => {
-      console.log('🎯 Event captured:', event);
-      
+    const unsubscribe = on("experiences:action", (event: any) => {
+      console.log("🎯 Event captured:", event);
+
       const capturedEvent: CapturedEvent = {
-        type: 'experiences:action',
+        type: "experiences:action",
         timestamp: Date.now(),
         data: {
           experienceId: event.experienceId || config.id,
@@ -97,16 +97,16 @@ export function EventTrackingDemo({
     });
 
     // Listen for dismiss events
-    const unsubscribeDismiss = on('experiences:dismissed', (event: any) => {
-      console.log('❌ Dismiss event captured:', event);
-      
+    const unsubscribeDismiss = on("experiences:dismissed", (event: any) => {
+      console.log("❌ Dismiss event captured:", event);
+
       const capturedEvent: CapturedEvent = {
-        type: 'experiences:dismissed',
+        type: "experiences:dismissed",
         timestamp: Date.now(),
         data: {
           experienceId: event.experienceId || config.id,
           experienceType: config.type,
-          action: 'dismiss',
+          action: "dismiss",
           context: {
             url: window.location.href,
             timestamp: event.timestamp || Date.now(),
@@ -148,11 +148,11 @@ export function EventTrackingDemo({
             <AlertTitle>Event Captured! 🎉</AlertTitle>
             <AlertDescription>
               <p className="text-sm mb-2">
-                {latestEvent.type === 'experiences:dismissed' 
-                  ? 'User dismissed the banner' 
-                  : latestEvent.type === 'experiences:shown'
-                  ? 'Banner displayed (impression tracked)'
-                  : `User clicked: "${latestEvent.data.button?.text || latestEvent.data.action || 'button'}"`}
+                {latestEvent.type === "experiences:dismissed"
+                  ? "User dismissed the banner"
+                  : latestEvent.type === "experiences:shown"
+                    ? "Banner displayed (impression tracked)"
+                    : `User clicked: "${latestEvent.data.button?.text || latestEvent.data.action || "button"}"`}
               </p>
               <div className="text-xs bg-white dark:bg-zinc-900 p-2 rounded border border-zinc-200 dark:border-zinc-700 overflow-x-auto font-mono">
                 <pre>{JSON.stringify(latestEvent.data, null, 2)}</pre>
@@ -182,7 +182,7 @@ export function EventTrackingDemo({
               onClick={() => setIsExpanded(!isExpanded)}
               className="px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
             >
-              {isExpanded ? 'Hide Config' : 'Show Config'}
+              {isExpanded ? "Hide Config" : "Show Config"}
             </button>
           </div>
         </div>
@@ -190,7 +190,8 @@ export function EventTrackingDemo({
         {/* Instructions */}
         <div className="mt-4 p-3 bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800 rounded-md">
           <p className="text-sm text-yellow-800 dark:text-yellow-200">
-            <strong>Try it:</strong> The banner is live on this page! Click any button or dismiss it to see the event captured above.
+            <strong>Try it:</strong> The banner is live on this page! Click any
+            button or dismiss it to see the event captured above.
           </p>
         </div>
       </div>
@@ -211,7 +212,7 @@ export function EventTrackingDemo({
                 type="button"
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    JSON.stringify(config, null, 2)
+                    JSON.stringify(config, null, 2),
                   );
                 }}
                 className="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors inline-flex items-center gap-1"
@@ -303,4 +304,3 @@ export function EventTrackingDemo({
     </div>
   );
 }
-

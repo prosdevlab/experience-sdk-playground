@@ -1,5 +1,14 @@
-import Link from 'next/link';
-import { Target, Wrench, Megaphone, User, Mail, CheckCircle, Clock, BookOpen, MessageSquare, Square, MessageCircle, ArrowRight, Layout } from 'lucide-react';
+import {
+  BookOpen,
+  CheckCircle,
+  Clock,
+  Mail,
+  Megaphone,
+  Target,
+  User,
+  Wrench,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,7 +29,8 @@ export default function Home() {
             Interactive Examples & Implementation Guides
           </h2>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Explore production-ready configurations, test targeting rules, and discover layout patterns for your next experience.
+            Explore production-ready configurations, test targeting rules, and
+            discover layout patterns for your next experience.
           </p>
         </div>
 
@@ -100,7 +110,8 @@ export default function Home() {
                     </span>
                   </div>
                   <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-2">
-                    Drive conversions with timely messages • 2 examples • Banner layout
+                    Drive conversions with timely messages • 2 examples • Banner
+                    layout
                   </p>
                   <div className="flex items-center gap-3">
                     <Link
