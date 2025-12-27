@@ -1,8 +1,7 @@
 "use client";
 
 import type { Experience } from "@prosdevlab/experience-sdk";
-import { evaluate, init, on, register } from "@prosdevlab/experience-sdk";
-import { bannerPlugin } from "@prosdevlab/experience-sdk-plugins";
+import { evaluate, on, register } from "@prosdevlab/experience-sdk";
 import { Activity, Copy, FileJson, Lightbulb, Target, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -34,12 +33,7 @@ export function EventTrackingDemo({
   const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
-    // Initialize SDK (if not already)
-    init({
-      debug: true,
-      plugins: [bannerPlugin],
-      consent: { required: false },
-    });
+    // SDK is already initialized by SDKProvider in root layout
 
     // Register this specific experience
     register(config.id, config);
